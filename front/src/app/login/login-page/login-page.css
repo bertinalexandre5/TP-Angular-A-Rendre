@@ -1,0 +1,36 @@
+.login {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 1rem;
+}
+
+.login-card {
+    width: 100%;
+    max-width: 380px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2rem;
+}
+
+.login-header {
+    text-align: center;
+}
+
+.logo {
+    font-size: 3rem;
+}
+
+h1 {
+    font-size: 1.8rem;
+}
+
+.accent {
+    color: var(--color-primary);
+}
+
+.subtitle {
+    margin: 0.25rem 0 0;
+    color: var(--color-muted);
+}

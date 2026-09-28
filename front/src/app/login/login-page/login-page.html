@@ -1,0 +1,33 @@
+<main class="login">
+    <form class="card login-card" [formGroup]="form" (ngSubmit)="submit()">
+        <div class="login-header">
+            <span class="logo">🍔</span>
+            <h1>Yummy <span class="accent">Components</span></h1>
+            <p class="subtitle">Caisse enregistreuse du food truck</p>
+        </div>
+
+        <div class="form-field">
+            <label for="login">Identifiant</label>
+            <input id="login" type="text" formControlName="login" autocomplete="username" />
+            @if (form.controls.login.touched && form.controls.login.hasError('required')) {
+                <span class="field-error">L'identifiant est obligatoire</span>
+            }
+        </div>
+
+        <div class="form-field">
+            <label for="password">Mot de passe</label>
+            <input id="password" type="password" formControlName="password" autocomplete="current-password" />
+            @if (form.controls.password.touched && form.controls.password.hasError('required')) {
+                <span class="field-error">Le mot de passe est obligatoire</span>
+            }
+        </div>
+
+        @if (errorMessage(); as message) {
+            <p class="alert alert-error">{{ message }}</p>
+        }
+
+        <button type="submit" class="btn btn-primary btn-lg" [disabled]="loading()">
+            Ouvrir la caisse
+        </button>
+    </form>
+</main>
